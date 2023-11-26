@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs') %>
+
+<section class="heading-section">
+  <div class="text-white z-1">
+    <h1 class="display-3 fw-semibold"><%= post.title %></h1>
+    <p>Published by <%= post.author %> on <time class="fw-semibold"><%= post.date %></time></p>
+  </div>
+</section>
+
+<section>
+  <div class="container mt-5 rounded-3 p-5">
+    <p class="mb-5"><%= post.content %></p>
+
+    <a href="/post/<%= post.id %>/edit" class="btn btn-outline-primary">Edit Post</a>
+    <form action="/post/<%= post.id %>/delete" method="POST" class="d-inline-block">
+      <input type="submit" value="Delete Post" class="btn btn-danger">
+    </form>
+  </div>
+</section>
+
+<%- include('partials/footer.ejs') %>

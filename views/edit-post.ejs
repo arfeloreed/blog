@@ -1,0 +1,25 @@
+<%- include('partials/header.ejs') %>
+
+<section class="heading-section-2">
+  <h1 class="text-white z-1 display-3 fw-semibold">Edit your Post</h1>
+</section>
+
+<section>
+  <form action="/post/<%= post.id %>/edit" method="POST" id="create-form" class="container-md my-5 rounded-3 p-5">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" name="title" id="title" value="<%= post.title %>" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="post" class="form-label">Post</label>
+      <textarea name="post" id="post" cols="80" rows="10" class="form-control"><%= post.content %></textarea>
+    </div>
+
+    <input type="submit" value="Save Changes" class="btn btn-success">
+    <a href="/post/<%= post.id %>" class="btn btn-danger">Cancel</a>
+  </form>
+
+</section>
+
+<%- include('partials/footer.ejs') %>
